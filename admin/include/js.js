@@ -1,0 +1,4 @@
+
+function myRefresh() {
+    location.reload();
+}
