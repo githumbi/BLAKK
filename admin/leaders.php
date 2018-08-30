@@ -51,7 +51,7 @@ include 'include/header.php';
 
           <div col-md-4>
              <div class="card" style="width: 18rem; background-color: #ccccb3;">
-                  <img class="card-img-top" ssrc="assets/img/leaders/2.jpg" alt="leaders">
+                  <img class="card-img-top" src="assets/img/leaders/2.jpg" alt="leaders">
                   <div class="card-body">
                     <h4 class="card-title">Leader General</h4>
                       <h5 class="card-title">Anabilla Roland- D. </h5>
@@ -60,7 +60,7 @@ include 'include/header.php';
                 </div>
           </div>
 
-          <div col-md-4>
+         <!--  <div col-md-4>
              <div class="card" style="width: 18rem; background-color: #ccccb3;">
                   <img class="card-img-top" src="assets/img/avatars/avatar1.jpg" alt="Card image cap">
                   <div class="card-body">
@@ -70,7 +70,7 @@ include 'include/header.php';
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                   </div>
                 </div>
-          </div>
+          </div> -->
 
 
 

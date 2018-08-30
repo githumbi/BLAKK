@@ -13,7 +13,7 @@
 //function for uploading profile picture
 function change_profile_image($id, $file_temp, $file_extn){
   
-    $db = mysqli_connect('localhost', 'root', '', 'blakk');
+    $db = mysqli_connect("localhost", "root", "","blakk");
   $file_path = 'profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
   move_uploaded_file($file_temp, $file_path);
   mysqli_query($db, "UPDATE signup SET profile='".$file_path."'  WHERE id =$id");
@@ -47,6 +47,7 @@ if (isset($_POST['update'])) {
                
 
                   //Send email to specific member approved
+                  $body = file_get_contents('mail/mail.html');
                   $mail = new PHPMailer();
                   $mail->isSMTP();
                   $mail->SMTPAuth = true;
@@ -57,8 +58,8 @@ if (isset($_POST['update'])) {
                   $mail->Username = 'info@thumbi.co.ke';
                   $mail->Password = '232j120g0038k'; 
                   $mail->SetFrom('githumbi@gmail.com');
-                  $mail->Subject = 'You have been approved to be member';
-                  $mail->Body = 'A test email';
+                  $mail->Subject = 'Succesfully Registered!';
+                  $mail->MsgHTML($body);
                   $mail->AddAddress("$email");
                   $mail->Send();
 

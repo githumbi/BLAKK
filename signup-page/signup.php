@@ -167,16 +167,16 @@ session_start();
 					<div class="contact_form_container">
 						 <form action="includes/signup.inc.php" method="post">
 						    <div class="form-group">
-						        <input class="form-control" type="text" name="name" placeholder="Full Name">
+						        <input class="form-control" type="text" name="name" placeholder="Full Name" required/>
 						    </div>
 						    <div class="form-group">
-						        <input class="form-control" type="email" name="email" placeholder="email">
+						        <input class="form-control" type="email" name="email" placeholder="email" required/>
 						    </div>
 						    <div class="form-group">
-						        <input class="form-control" type="number" name="phone" placeholder="phone">
+						        <input class="form-control" type="number" name="phone" placeholder="phone" required/>
 						    </div>
 						    <div class="form-group">
-						        <input class="form-control" type="text" name="work" placeholder="occupation">
+						        <input class="form-control" type="text" name="work" placeholder="occupation" required/>
 						    </div>
 						    <div class="form-group">
 						       <div class="container">

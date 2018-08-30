@@ -48,7 +48,7 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php'; 
 require 'PHPMailer/src/SMTP.php'; 
 
-
+$body = file_get_contents('mail/mail.html');
 $mail = new PHPMailer();
 $mail->isSMTP();
 $mail->SMTPAuth = true;
@@ -59,14 +59,15 @@ $mail->isHTML(true);
 $mail->Username = 'info@thumbi.co.ke';
 $mail->Password = '232j120g0038k'; 
 $mail->SetFrom('githumbi@gmail.com');
-$mail->Subject = 'fello wolrld';
-$mail->Body = '<p>hello</p>';
+$mail->Subject = 'BLAKK PARADYSE REGISTRATION';
+// $mail->Body = '<p>hello</p>';
+$mail->MsgHTML($body);
 $mail->AddAddress("$email");
 
 $mail->Send();
 
 
-$_SESSION['msg'] = "The information has been Updated";
+$_SESSION['msg'] = "We have succesfully received your details, We have sent an email to your account";
 
 
 
