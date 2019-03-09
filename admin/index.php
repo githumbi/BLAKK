@@ -15,7 +15,8 @@ if (isset($_GET['del'])) {
             <div class="collapse navbar-collapse" id="navcol-1" style="background-color:#3b99e0;width:328px;margin:0;">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link active" href="index.php">Home</a></li>
-                    <li class="style="text-decoration: underline;"nav-item" role="presentation"><a class="nav-link" href="signup.php">SIGNUP MEMBERS</a></li>
+                    <li class="style="text-decoration: underline; role="presentation">
+                    <a class="nav-link" href="signup.php">SIGNUP MEMBERS</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link" href="leaders.php">leaders</a></li>
                   <!--   <li class="nav-item" role="presentation" ><a class="nav-link" href="report.php">Monthly Report </a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="offering.php">Offering </a></li>
@@ -57,7 +58,6 @@ if (isset($_GET['del'])) {
         </div>
     </div>
     <div class="d-inline" data-aos="fade" style="background-color:#d60606;">
-        <div class="container">
             <div class="row" style="background-color:#ffffff;">
                 <div class="col"><table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
        <thead>
@@ -131,7 +131,7 @@ $results = mysqli_query($db, "SELECT * FROM signup");
 	</tbody>
     </table></div>
             </div>
-        </div>
+        
     </div>
     <br><br><br><br><br><br>
     <?php

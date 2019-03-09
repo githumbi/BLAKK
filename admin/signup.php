@@ -109,7 +109,7 @@ include 'include/header.php';
                             <div class="form-group">
                                 <select type="text" class="form-control"  name="groups">
                                 <option selected>Choose your Group</option>
-                                <option value="general">General Group</option>
+                                <option value="general">General</option>
                                 <option value="investor">Investor Group</option>
 
  </select>
