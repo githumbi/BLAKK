@@ -3,7 +3,15 @@
 include 'include/db.php';
 include 'include/header.php';
 
- 
+ 		//function for uploading profile picture
+         function change_profile_image($id, $file_temp, $file_extn){
+			
+			mysqli_connect('localhost' ,'root','','blakk-paradyse');
+		$file_path = 'profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
+		move_uploaded_file($file_temp, $file_path);
+		mysqli_query($db, "UPDATE signup SET profile='".$file_path."'  WHERE id =$id");
+		
+		}
 ?>
             <div class="collapse navbar-collapse" id="navcol-1" style="background-color:#3b99e0;width:328px;margin:0;">
                 <ul class="nav navbar-nav ml-auto">
@@ -85,7 +93,7 @@ include 'include/header.php';
                     <div class="col-lg-6">
                     <div class="section_title"><h2>Personal Details</h2></div>
                 
-                        
+                  
                             <div class="form-group">
                                <input class="form-control" type="text" name="name" placeholder="Full Name"  />
                             </div>
@@ -98,6 +106,14 @@ include 'include/header.php';
                             <div class="form-group">
                                <input class="form-control" type="text" name="work" placeholder="occupation"  />
                             </div>
+                            <div class="form-group">
+                                <select type="text" class="form-control"  name="groups">
+                                <option selected>Choose your Group</option>
+                                <option value="general">General Group</option>
+                                <option value="investor">Investor Group</option>
+
+ </select>
+                                   </div>
                             <div class="form-group">
                                <div class="container">
                             
