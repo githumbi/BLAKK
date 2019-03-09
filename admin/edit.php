@@ -31,6 +31,7 @@ if (isset($_POST['update'])) {
   $email = $_POST['email'];
   $gender = $_POST['gender'];
   $work = $_POST['work'];
+  $groups = $_POST['groups'];
   $message = $_POST['message'];
   $amount = $_POST['amount'];
   $id= $_POST['id'];
@@ -39,7 +40,7 @@ if (isset($_POST['update'])) {
 
 
   mysqli_query($db, "UPDATE signup SET  name='$name',  country='$country',  phone ='$phone', email='$email',
-   gender='$gender', work='$work' , message='$message', amount='$amount' WHERE id=$id ");
+   gender='$gender', work='$work' , message='$message', amount='$amount', groups='$groups' WHERE id=$id ");
 
 
            
@@ -98,6 +99,7 @@ if (isset($_GET['edit'])) {
   $message = $record['message'];
   $approve = $record['approve'];
   $amount = $record['amount'];
+  $groups = $record['groups'];
 
 }
 ?>
@@ -236,6 +238,29 @@ if (isset($_GET['edit'])) {
      <tr>
       <th scope="col">occupation</th>
       <td><input type="text" name="work"  value="<?php echo $work; ?>"></td>
+    </tr>
+    <tr>
+      <th scope="col">Group</th>
+      <td><?php if($groups== 'general'){
+          echo            "<select type='text' class='form-control'  name='groups'>
+                            <option selected value='general'>general</option>
+                            <option value='individual'>individual</option></select>";
+        }
+       else{
+          echo            "<select type='text' class='form-control'  name='groups'>
+          <option  value='general'>general</option>
+          <option selected value='individual'>individual</option></select>";
+        } 
+        //    else{
+        //   echo "<select type='text' class='form-control'  name='groups'>
+        //   <option selected >Choose Group</option>
+        //   <option  value='general'>general</option>
+        //   <option  value='individual'>individual</option></select>";
+        // }
+        
+        ?>
+
+         </select></td>
     </tr>
      <tr>
       <th scope="col">Amount Paid</th>
