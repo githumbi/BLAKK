@@ -9,6 +9,9 @@ include 'db.php';
 		require 'PHPMailer/src/PHPMailer.php'; 
 		require 'PHPMailer/src/SMTP.php'; 
 
+
+		
+
 if (isset($_POST['submit'])) {
 			
 
@@ -20,6 +23,7 @@ if (isset($_POST['submit'])) {
 		$work = $_POST['work'];
 		$address = $_POST['address'];
 		$city = $_POST['city'];
+		$groups = $_POST['groups'];
 
 
 		// if (!empty($first)) {
@@ -43,11 +47,12 @@ if (isset($_POST['submit'])) {
 		//     exit();
 		// }
 		 // else {
-		    $sql = ("INSERT INTO signup (name, country, email ,phone, gender,work,address, city) VALUES ('$name', '$country','$email','$phone', '$gender','$work', '$address', '$city')");
+		    $sql = ("INSERT INTO signup (name, country, email ,phone, gender,work,address, city, groups)
+			 VALUES ('$name', '$country','$email','$phone', '$gender','$work', '$address', '$city', '$groups')");
 		    //send the data to database
 		    $results = $db->query($sql);
 		// }
-
+		
 
 
 		
@@ -81,9 +86,9 @@ if (isset($_POST['submit'])) {
 
 		
 
-
 		
 }else{
 	$_SESSION['msg-err'] = "Failed, please try again later..";
 	header('Location: ../signup.php');
 }
+
