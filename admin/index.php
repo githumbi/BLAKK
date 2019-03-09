@@ -69,6 +69,7 @@ if (isset($_GET['del'])) {
       <th>Phone</th>
       <th>Gender</th>
       <th>Occupation</th>	
+      <th>Group</th>
       <th>Amount Paid</th>
       <th>APPROVED</th>
       <th>action</th>	
@@ -100,6 +101,7 @@ $results = mysqli_query($db, "SELECT * FROM signup");
 		         <td><?php  echo $row['phone']; ?></td>	
              <td><?php  echo $row['gender']; ?></td> 
              <td><?php  echo $row['work']; ?></td>  
+             <td><?php echo $row['groups']; ?></td>
              <td><?php echo $row['amount']; ?></td>
              <?php 
               if ($row['approve']=='yes') { ?>
