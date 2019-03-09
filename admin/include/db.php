@@ -4,4 +4,4 @@ if (!isset($_SESSION['name'])) {
    header("Location: ../login/index.php");
 }
 //connect to database
-$db = mysqli_connect("localhost", "root", "","blakk");
+$db = mysqli_connect('localhost' ,'root','','blakk-paradyse');

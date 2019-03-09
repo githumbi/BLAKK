@@ -13,7 +13,7 @@
 //function for uploading profile picture
 function change_profile_image($id, $file_temp, $file_extn){
   
-    $db = mysqli_connect("localhost", "root", "","blakk");
+    mysqli_connect('localhost' ,'root','','blakk-paradyse');
   $file_path = 'profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
   move_uploaded_file($file_temp, $file_path);
   mysqli_query($db, "UPDATE signup SET profile='".$file_path."'  WHERE id =$id");
@@ -32,6 +32,7 @@ if (isset($_POST['update'])) {
   $gender = $_POST['gender'];
   $work = $_POST['work'];
   $message = $_POST['message'];
+  $amount = $_POST['amount'];
   $id= $_POST['id'];
   $approve = $_POST['approve'];
   
@@ -52,12 +53,12 @@ if (isset($_POST['update'])) {
                   $mail->isSMTP();
                   $mail->SMTPAuth = true;
                   $mail->SMTPSecure = 'ssl';
-                  $mail->Host = 'rbx103.truehost.cloud';
+                  $mail->Host = 'mail.blakkparadyse.org';
                   $mail->Port = '465';
                   $mail->isHTML(true);
-                  $mail->Username = 'info@thumbi.co.ke';
-                  $mail->Password = '232j120g0038k'; 
-                  $mail->SetFrom('githumbi@gmail.com');
+                  $mail->Username = 'info@blakkparadyse.org';
+                  $mail->Password = '6u#bcZ343]cNKA'; 
+                  $mail->SetFrom('info@blakkparadyse.org');
                   $mail->Subject = 'Succesfully Registered!';
                   $mail->MsgHTML($body);
                   $mail->AddAddress("$email");
@@ -239,15 +240,15 @@ if (isset($_GET['edit'])) {
       <th scope="col">Amount Paid</th>
       <td><input type="text" name="amount"  value="<?php echo $amount; ?>"></td>
     </tr>
-     <tr>
+   <tr>
       <th scope="col">approved</th>
-            <?php 
-              if ($approve=='yes') { ?>
-                <td><?php echo $approve ?></td>
-            <?php  }elseif ($approve=='no') { ?>
-             <td> <input type='text' name='approve' value="<?php echo $approve; ?>"></td>
-            <?php }
-            ?>
+        <td>
+           <select type="text" class="form-control"  name="approve">
+                                <option selected>Approved?</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+         </select>  
+        </td>
     </tr>
    
   </tbody>

@@ -1,0 +1,6 @@
+[04-Sep-2018 12:51:28 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blakkpar/admin.blakkparadyse.org/admin/include/header.php:29) in /home/blakkpar/admin.blakkparadyse.org/admin/edit.php on line 72
+[04-Sep-2018 12:55:30 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blakkpar/admin.blakkparadyse.org/admin/include/header.php:29) in /home/blakkpar/admin.blakkparadyse.org/admin/index.php on line 11
+[04-Sep-2018 12:56:18 UTC] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home/blakkpar/admin.blakkparadyse.org/admin/include/header.php:29) in /home/blakkpar/admin.blakkparadyse.org/admin/edit.php on line 72
+[08-Mar-2019 07:55:41 UTC] PHP Warning:  mysqli_connect(): (HY000/1045): Access denied for user 'blakkpar'@'localhost' (using password: YES) in /home/blakkpar/admin.blakkparadyse.org/admin/include/db.php on line 7
+[08-Mar-2019 07:55:41 UTC] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, boolean given in /home/blakkpar/admin.blakkparadyse.org/admin/index.php on line 86
+[08-Mar-2019 07:55:41 UTC] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/blakkpar/admin.blakkparadyse.org/admin/index.php on line 90
