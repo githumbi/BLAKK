@@ -38,7 +38,8 @@ if (isset($_POST['update'])) {
   
 
 
-  mysqli_query($db, "UPDATE signup SET  name='$name',  country='$country',  phone ='$phone', email='$email', gender='$gender', work='$work' , message='$message', amount='$amount' WHERE id=$id ");
+  mysqli_query($db, "UPDATE signup SET  name='$name',  country='$country',  phone ='$phone', email='$email',
+   gender='$gender', work='$work' , message='$message', amount='$amount' WHERE id=$id ");
 
 
            
@@ -103,7 +104,7 @@ if (isset($_GET['edit'])) {
             <div class="collapse navbar-collapse" id="navcol-1" style="background-color:#3b99e0;width:328px;margin:0;">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="style="text-decoration: underline;"nav-item" role="presentation"><a class="nav-link active" href="signup.php">SIGNUP MEMBERS</a></li>
+                    <li class="style="text-decoration: underline; class="nav-item" role="presentation"><a class="nav-link active" href="signup.php">SIGNUP MEMBERS</a></li>
                     <li class="nav-item" role="presentation" ><a class="nav-link" href="leaders.php">leaders</a></li>
                   <!--   <li class="nav-item" role="presentation" ><a class="nav-link" href="report.php">Monthly Report </a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="offering.php">Offering </a></li>
@@ -243,10 +244,17 @@ if (isset($_GET['edit'])) {
    <tr>
       <th scope="col">approved</th>
         <td>
-           <select type="text" class="form-control"  name="approve">
-                                <option selected>Approved?</option>
-                                <option value="yes">Yes</option>
-                                <option value="no">No</option>
+        <?php if($approve== 'yes'){
+          echo            "<select type='text' class='form-control'  name='approve'>
+                            <option selected value='yes'>Yes</option>
+                            <option value='no'>No</option>";
+        }else
+        echo "<select type='text' class='form-control'  name='approve'>
+              <option  value='yes'>Yes</option>
+              <option selected value='no'>No</option>";
+        
+        ?>
+
          </select>  
         </td>
     </tr>
