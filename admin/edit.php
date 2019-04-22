@@ -13,7 +13,7 @@
 //function for uploading profile picture
 function change_profile_image($id, $file_temp, $file_extn){
   
-    mysqli_connect('localhost' ,'root','','blakk-paradyse');
+   $db =  mysqli_connect('localhost' ,'root','','blakk-paradyse');
   $file_path = 'profile/' . substr(md5(time()), 0, 10) . '.' . $file_extn;
   move_uploaded_file($file_temp, $file_path);
   mysqli_query($db, "UPDATE signup SET profile='".$file_path."'  WHERE id =$id");
